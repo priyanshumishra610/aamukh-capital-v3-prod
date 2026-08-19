@@ -11,22 +11,6 @@
   animation: heroImageSettle 1.6s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
 
-.hero-live-dot {
-  animation: heroLivePulse 2.4s ease infinite;
-}
-
-@keyframes heroLivePulse {
-  0%,
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.45;
-    transform: scale(0.82);
-  }
-}
-
 @keyframes heroPlayRing {
   0% {
     transform: scale(1);
@@ -58,10 +42,6 @@
   transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.hero-badge {
-  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), border-color 160ms ease;
-}
-
 .hero-italic-underline {
   background-image: linear-gradient(currentColor, currentColor);
   background-repeat: no-repeat;
@@ -79,11 +59,6 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .hero-badge:hover {
-    transform: translateY(-1px);
-    border-color: rgb(76 107 232 / 0.28);
-  }
-
   .hero-primary-cta:hover {
     background-color: #152873;
     box-shadow: 0 22px 40px rgb(10 17 40 / 0.28);
@@ -102,14 +77,114 @@
   }
 }
 
+.hero-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  opacity: 0.09;
+}
+
+.hero-corner {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-color: rgb(10 17 40 / 0.22);
+  border-style: solid;
+  border-width: 0;
+}
+
+.hero-growth-path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: heroDrawPath 1.45s cubic-bezier(0.23, 1, 0.32, 1) 0.4s forwards;
+}
+
+@keyframes heroDrawPath {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.hero-ornament {
+  animation: heroOrnamentIn 0.7s cubic-bezier(0.23, 1, 0.32, 1) 0.55s both;
+}
+
+.hero-orbit {
+  animation: heroSpin 36s linear infinite;
+}
+
+.hero-orbit-rev {
+  animation: heroSpin 52s linear infinite reverse;
+}
+
+@keyframes heroSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hero-plus {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+}
+
+.hero-plus::before,
+.hero-plus::after {
+  content: '';
+  position: absolute;
+  background: rgb(10 17 40 / 0.28);
+}
+
+.hero-plus::before {
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+.hero-plus::after {
+  top: 50%;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+.hero-tick {
+  position: absolute;
+  background: rgb(10 17 40 / 0.2);
+}
+
+.hero-crosshair-line {
+  background: rgb(76 107 232 / 0.2);
+}
+
+@keyframes heroOrnamentIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-play-ring,
-  .hero-live-dot,
-  .hero-image-settle {
+  .hero-image-settle,
+  .hero-growth-path,
+  .hero-ornament,
+  .hero-orbit,
+  .hero-orbit-rev {
     animation: none;
   }
 
-  .hero-badge,
+  .hero-growth-path {
+    stroke-dashoffset: 0;
+  }
+
   .hero-play-disc,
   .hero-primary-cta-inner,
   .hero-cta-arrow,

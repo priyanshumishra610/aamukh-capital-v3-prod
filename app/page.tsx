@@ -2,6 +2,7 @@
 
 import NavigationSection from '@/components/NavigationSection';
 import HeroSection from '@/components/HeroSection';
+import HomeAmbient from '@/components/HomeAmbient';
 import MarqueeSection from '@/components/MarqueeSection';
 import ValuePropositionSection from '@/components/ValuePropositionSection';
 import MarketVisionSection from '@/components/MarketVisionSection';
@@ -18,6 +19,7 @@ import FooterSection from '@/components/FooterSection';
 export default function Home() {
   return (
     <main className="relative min-h-screen w-full overflow-x-hidden bg-snow selection:bg-brand selection:text-white">
+      <HomeAmbient />
       <NavigationSection />
       
       {/* 1. THE HOOK */}

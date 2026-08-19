@@ -63,7 +63,7 @@ export default function CallToActionSection() {
                 placeholder="enter your pitch deck URL_"
                 className="w-full bg-transparent px-4 py-4 md:py-6 font-mono text-sm md:text-lg text-text-primary placeholder-text-muted outline-none"
               />
-              <button className="shrink-0 py-4 md:py-6 px-8 md:px-12 bg-[#4C6BE8] hover:bg-[#3a58d6] text-white rounded-[10rem] font-mono uppercase tracking-widest text-xs md:text-sm font-semibold transition-all">
+              <button className="shrink-0 py-4 md:py-6 px-8 md:px-12 bg-[#4C6BE8] hover:bg-[#3a58d6] text-white rounded-[10rem] font-mono uppercase tracking-widest text-xs md:text-sm font-semibold transition-[background-color,transform] duration-200 ease-out active:scale-[0.97]">
                 Execute
               </button>
             </div>

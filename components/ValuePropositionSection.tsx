@@ -61,7 +61,7 @@ const ValuePropositionSection = () => {
             {stats.map((stat, i) => (
               <motion.div
                 key={stat.label}
-                className="bg-white px-6 py-6 rounded-2xl border border-border min-w-[140px] shadow-sm"
+                className="bg-white px-6 py-6 rounded-2xl border border-border min-w-[140px] shadow-sm transition-[transform,box-shadow] duration-200 ease-out [@media(hover:hover)_and_(pointer:fine)]:hover:-translate-y-1 [@media(hover:hover)_and_(pointer:fine)]:hover:shadow-md"
                 initial={{ opacity: 0, y: 30, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
