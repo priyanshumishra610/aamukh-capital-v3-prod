@@ -140,7 +140,7 @@ export default function SelectMenu({
           if (atMax) return;
           setOpen((prev) => !prev);
         }}
-        className={`flex h-14 w-full items-center justify-between gap-3 rounded-2xl border bg-white px-4 text-left text-[15px] transition-[border-color,box-shadow,opacity] duration-160 ease-[cubic-bezier(0.23,1,0.32,1)] ${
+        className={`flex h-14 w-full items-center justify-between gap-3 rounded-2xl border bg-white px-4 text-left text-[15px] transition-[border-color,box-shadow,opacity] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] ${
           error
             ? 'border-red-400 ring-2 ring-red-100'
             : open
@@ -160,7 +160,7 @@ export default function SelectMenu({
           {triggerLabel}
         </span>
         <ChevronDown
-          className={`h-4 w-4 shrink-0 text-text-muted transition-transform duration-160 ease-[cubic-bezier(0.23,1,0.32,1)] ${open ? 'rotate-180' : ''}`}
+          className={`h-4 w-4 shrink-0 text-text-muted transition-transform duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] ${open ? 'rotate-180' : ''}`}
         />
       </button>
 
