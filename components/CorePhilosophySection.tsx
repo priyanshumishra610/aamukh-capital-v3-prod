@@ -42,11 +42,11 @@ export default function CorePhilosophySection() {
   const activeIndex = philosophies.findIndex(p => p.id === activeTab);
 
   return (
-    <section id="philosophy" className="w-full bg-snow py-[10rem] px-6 lg:px-10 flex flex-col items-center overflow-hidden">
-      <div className="max-w-[100rem] w-full mx-auto flex flex-col items-center gap-16 md:gap-20">
+    <section id="philosophy" className="w-full bg-snow py-16 md:py-20 px-6 lg:px-10 flex flex-col items-center overflow-hidden">
+      <div className="max-w-[100rem] w-full mx-auto flex flex-col items-center gap-10 md:gap-12">
         
         {/* Section Header */}
-        <div className="flex flex-col items-center w-full border-t border-border pt-16 md:pt-24 gap-6">
+        <div className="flex flex-col items-center w-full border-t border-border pt-8 gap-5">
           <motion.div
             className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-white border border-border shadow-sm"
             initial={{ opacity: 0, scale: 0.9 }}
@@ -67,7 +67,7 @@ export default function CorePhilosophySection() {
             transition={{ duration: 0.7, delay: 0.1, ease: [0.19, 1, 0.22, 1] }}
           >
             Fixing the broken model of <br className="hidden md:block"/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand-300">traditional investing.</span>
+            <span className="text-brand">traditional investing.</span>
           </motion.h2>
 
           <motion.p

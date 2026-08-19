@@ -37,7 +37,7 @@ export default function InteractiveDualModel() {
   const isDiscovery = activeTrackId === 'discovery';
 
   return (
-    <section className="bg-snow py-[10rem] px-6 lg:px-10 overflow-hidden relative border-t border-border/50">
+    <section className="bg-snow py-16 md:py-20 px-6 lg:px-10 overflow-hidden relative border-t border-border/50">
       
       {/* Background Ambience (Subtle Bottom Glow Only) */}
       <div className="absolute top-[20%] left-[-10%] w-[500px] h-[500px] bg-brand/5 blur-[150px] rounded-full pointer-events-none" />
@@ -46,13 +46,13 @@ export default function InteractiveDualModel() {
       <div className="max-w-[100rem] mx-auto flex flex-col items-center relative z-10">
         
         {/* Header Section */}
-        <div className="text-center mb-20 max-w-3xl">
+        <div className="text-center mb-10 max-w-3xl">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-border shadow-sm mb-6">
             <span className="w-2 h-2 rounded-full bg-brand animate-pulse" />
             <span className="font-mono text-[11px] font-bold tracking-widest text-brand uppercase">Thesis Architecture</span>
           </div>
           <h2 className="font-geom font-medium text-4xl md:text-5xl lg:text-6xl text-text-primary tracking-tight leading-[1.1]">
-            The <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand-300">Dual Model.</span>
+            The <span className="text-brand">Dual Model.</span>
           </h2>
         </div>
 

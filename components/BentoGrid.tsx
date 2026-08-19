@@ -11,7 +11,7 @@ const ease = [0.19, 1, 0.22, 1] as const;
 
 export default function BentoGrid() {
   return (
-    <section className="w-full bg-snow py-24 px-6 md:px-10 font-geom overflow-hidden flex flex-col items-center relative selection:bg-brand selection:text-white">
+    <section className="w-full bg-snow py-16 md:py-20 px-6 md:px-10 font-geom overflow-hidden flex flex-col items-center relative selection:bg-brand selection:text-white">
 
       {/* Decorative Background Glows mimicking brand style */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
@@ -20,7 +20,7 @@ export default function BentoGrid() {
       </div>
 
       {/* Header Area */}
-      <div className="max-w-4xl text-center mb-16 z-10 flex flex-col items-center pt-8">
+      <div className="max-w-4xl text-center mb-10 z-10 flex flex-col items-center">
 
         <motion.div
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-border/60 shadow-sm mb-6"
@@ -42,7 +42,7 @@ export default function BentoGrid() {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1, ease }}
         >
-          Providing structured, <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand-300">belief-driven</span> capital.
+          Providing structured, <span className="text-brand">belief-driven</span> capital.
         </motion.h2>
 
         <motion.p

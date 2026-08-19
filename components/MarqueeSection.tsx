@@ -81,7 +81,7 @@ const MarqueeSection = ({
       <span className="text-brand text-4xl">✦</span>
       <span>India's Supercycle</span>
       <span className="text-brand text-4xl">✦</span>
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand-300">Conviction Capital</span>
+      <span className="text-brand">Conviction Capital</span>
       <span className="text-brand text-4xl">✦</span>
       <span>Dual Engine</span>
       <span className="text-brand text-4xl">✦</span>
@@ -99,7 +99,7 @@ const MarqueeSection = ({
   useMarqueeAnimation(trackRef, seqWidth, baseVelocity, scrollSensitivity);
 
   return (
-    <section className={`w-full overflow-hidden py-12 md:py-20 bg-snow border-y border-border/60 ${className}`}>
+    <section className={`w-full overflow-hidden py-8 md:py-10 bg-snow border-y border-border/60 ${className}`}>
       <div
         ref={trackRef}
         className="flex whitespace-nowrap will-change-transform"

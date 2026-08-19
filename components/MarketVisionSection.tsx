@@ -21,7 +21,7 @@ const MarketVisionSection = () => {
   }, []);
 
   return (
-    <section className="w-full bg-snow pb-[8rem] px-6 lg:px-10 flex flex-col items-center">
+    <section className="w-full bg-snow pb-16 md:pb-20 px-6 lg:px-10 flex flex-col items-center">
       <div className="max-w-[100rem] w-full mx-auto flex flex-col items-center">
 
         <motion.div

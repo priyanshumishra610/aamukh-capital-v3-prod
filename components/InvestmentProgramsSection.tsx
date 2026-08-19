@@ -2,11 +2,11 @@ import React from 'react';
 
 const InvestmentProgramsSection = () => {
   return (
-    <section id="collective" className="w-full bg-snow py-[10rem] px-6 lg:px-10 flex flex-col items-center">
-      <div className="max-w-[100rem] w-full mx-auto flex flex-col items-center gap-24">
+    <section id="collective" className="w-full bg-snow py-16 md:py-20 px-6 lg:px-10 flex flex-col items-center">
+      <div className="max-w-[100rem] w-full mx-auto flex flex-col items-center gap-10 md:gap-12">
 
         {/* Section Intro */}
-        <div className="flex flex-col items-center w-full border-t border-border pt-16 md:pt-24 gap-6">
+        <div className="flex flex-col items-center w-full border-t border-border pt-8 gap-5">
           <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-white border border-border shadow-sm">
             <span className="font-mono text-xs font-semibold tracking-widest text-[#4C6BE8] uppercase">
               The Collective

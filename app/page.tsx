@@ -14,12 +14,9 @@ import FlywheelModelSection from '@/components/FlywheelModelSection';
 import TeamExpertiseSection from '@/components/TeamExpertiseSection';
 import CallToActionSection from '@/components/CallToActionSection';
 import FooterSection from '@/components/FooterSection';
-import PageLoader from '@/components/PageLoader';
 
 export default function Home() {
   return (
-    <>
-      <PageLoader />
     <main className="relative min-h-screen w-full overflow-x-hidden bg-snow selection:bg-brand selection:text-white">
       <NavigationSection />
       
@@ -37,24 +34,18 @@ export default function Home() {
       <BentoGrid />
       
       {/* 5. ALIGNMENT & MATH (Breather) */}
-      {/* Putting this here breaks up the Bento & Dual Model perfectly */}
       <FundStructureSection />
       
       {/* 6. CAPITAL DEPLOYMENT (Heavy Visual) */}
       <InteractiveDualModel />
       
-      
       {/* 7. PROOF OF WORK (Breather) */}
-      {/* "Now that you know how we invest, here is who we invested in." */}
       <PipelineShowcaseSection />
       
       {/* 8. POST-INVESTMENT VALUE (Heavy Visual) */}
-      {/* "Now that they are in the portfolio, here is how we accelerate them." */}
       <FlywheelModelSection />
       
-      
       {/* 9. THE OPERATORS (Breather) */}
-      {/* "Here are the people spinning that flywheel." */}
       <TeamExpertiseSection />
 
       <MarketVisionSection />
@@ -64,6 +55,5 @@ export default function Home() {
       
       <FooterSection />
     </main>
-    </>
   );
 }

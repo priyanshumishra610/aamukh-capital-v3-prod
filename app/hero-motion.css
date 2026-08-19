@@ -1,3 +1,16 @@
+@keyframes heroImageSettle {
+  from {
+    transform: scale(1.16);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.hero-image-settle {
+  animation: heroImageSettle 1.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
 .hero-live-dot {
   animation: heroLivePulse 2.4s ease infinite;
 }
@@ -91,7 +104,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .hero-play-ring,
-  .hero-live-dot {
+  .hero-live-dot,
+  .hero-image-settle {
     animation: none;
   }
 

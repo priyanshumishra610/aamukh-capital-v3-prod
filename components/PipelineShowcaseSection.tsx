@@ -76,14 +76,14 @@ export default function PipelineShowcaseSection() {
   };
 
   return (
-    <section id="portfolio" className="w-full bg-snow py-[10rem] px-6 lg:px-10 flex flex-col items-center border-t border-border/50 overflow-hidden relative">
+    <section id="portfolio" className="w-full bg-snow py-16 md:py-20 px-6 lg:px-10 flex flex-col items-center border-t border-border/50 overflow-hidden relative">
       
       <div className="absolute top-[10%] right-[-5%] w-[40vw] h-[40vw] max-w-[600px] max-h-[600px] bg-[#4C6BE8]/5 blur-[120px] rounded-full pointer-events-none z-0" />
 
       <div className="max-w-[100rem] w-full mx-auto flex flex-col items-center gap-10 md:gap-14 z-10">
         
         {/* Header Block - Simplified */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end w-full gap-8 border-b border-border pb-12">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end w-full gap-6 border-b border-border pb-8">
           <div className="flex flex-col items-start gap-6 max-w-3xl">
             <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-white border border-border shadow-sm">
               <span className="font-mono text-xs font-semibold tracking-widest text-[#4C6BE8] uppercase">
@@ -93,7 +93,7 @@ export default function PipelineShowcaseSection() {
             
             <h2 className="font-sans font-bold text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-[-0.04em] text-text-primary uppercase">
               Executing The <br className="hidden md:block"/>
-              <span className="editorial-italic lowercase tracking-normal text-transparent bg-clip-text bg-gradient-to-r from-[#4C6BE8] to-[#869CE9]">
+              <span className="editorial-italic lowercase tracking-normal text-brand">
                 Flywheel.
               </span>
             </h2>

@@ -9,11 +9,11 @@ const ease = [0.19, 1, 0.22, 1] as const;
 
 const FooterSection = () => {
   return (
-    <footer className="w-full bg-white pt-[8rem] pb-[3rem] px-6 lg:px-10 flex flex-col items-center border-t border-border">
-      <div className="max-w-[100rem] w-full mx-auto flex flex-col items-center gap-20">
+    <footer className="w-full bg-white pt-16 md:pt-20 pb-12 px-6 lg:px-10 flex flex-col items-center border-t border-border">
+      <div className="max-w-[100rem] w-full mx-auto flex flex-col items-center gap-12">
 
         <motion.div
-          className="w-full flex flex-col md:flex-row justify-between gap-16 md:gap-8 pb-16 border-b border-border/60"
+          className="w-full flex flex-col md:flex-row justify-between gap-12 md:gap-8 pb-10 border-b border-border/60"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-5%' }}

@@ -19,7 +19,7 @@ const NavigationSection = () => {
         className="fixed top-0 left-0 right-0 z-50 flex justify-center px-3 mt-4 lg:px-6"
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, delay: isHome ? 2.6 : 0.05, ease: [0.19, 1, 0.22, 1] }}
+        transition={{ duration: 0.65, delay: isHome ? 0.18 : 0.05, ease: [0.23, 1, 0.32, 1] }}
       >
         <nav className="relative flex items-center justify-between bg-white w-full max-w-6xl rounded-full p-[0.3rem] pl-[0.9rem] shadow-sm border border-border">
 

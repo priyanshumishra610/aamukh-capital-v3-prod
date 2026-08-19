@@ -262,7 +262,7 @@ export default function CommunityOnboardingForm() {
         </aside>
 
         <motion.header
-          className="mb-8 max-w-2xl [grid-area:header] lg:mb-10"
+          className="mb-5 max-w-2xl [grid-area:header] lg:mb-6"
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease }}
@@ -279,12 +279,12 @@ export default function CommunityOnboardingForm() {
 
         <form
           onSubmit={handleSubmit}
-          className="min-w-0 [grid-area:form] rounded-[1.75rem] bg-white px-5 py-8 ring-1 ring-[#ececec] sm:px-8 sm:py-10 md:px-12"
+          className="min-w-0 [grid-area:form] rounded-[1.75rem] bg-white px-5 py-6 ring-1 ring-[#ececec] sm:px-8 sm:py-7 md:px-10"
           noValidate
         >
             <section id="personal" className="scroll-mt-36 lg:scroll-mt-28">
               <h2 className="font-sans text-xl font-bold tracking-tight text-text-primary md:text-2xl">Personal Details</h2>
-              <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2">
                 <div id="field-fullName">
                   <Field id="fullName" label="Full Name" required error={errors.fullName}>
                     <input
@@ -365,11 +365,11 @@ export default function CommunityOnboardingForm() {
               </div>
             </section>
 
-            <hr className="my-10 border-[#f0f0f0]" />
+            <hr className="my-5 border-[#f0f0f0]" />
 
             <section id="investment" className="scroll-mt-36 lg:scroll-mt-28">
               <h2 className="font-sans text-xl font-bold tracking-tight text-text-primary md:text-2xl">Investment Profile</h2>
-              <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2">
                 <div id="field-investedBefore">
                   <Field id="investedBefore" label="Have you invested in startups before?" required error={errors.investedBefore}>
                     <SelectMenu
@@ -469,13 +469,13 @@ export default function CommunityOnboardingForm() {
               </div>
             </section>
 
-            <hr className="my-10 border-[#f0f0f0]" />
+            <hr className="my-5 border-[#f0f0f0]" />
 
             <section id="expertise" className="scroll-mt-36 lg:scroll-mt-28">
               <h2 className="font-sans text-xl font-bold tracking-tight text-text-primary md:text-2xl">
                 Sector & Professional Expertise
               </h2>
-              <div className="mt-8 grid grid-cols-1 gap-6">
+              <div className="mt-5 grid grid-cols-1 gap-5">
                 <div id="field-expertiseSectors">
                   <Field
                     id="expertiseSectors"
@@ -525,11 +525,11 @@ export default function CommunityOnboardingForm() {
               </div>
             </section>
 
-            <hr className="my-10 border-[#f0f0f0]" />
+            <hr className="my-5 border-[#f0f0f0]" />
 
             <section id="mentorship" className="scroll-mt-36 lg:scroll-mt-28">
               <h2 className="font-sans text-xl font-bold tracking-tight text-text-primary md:text-2xl">Startup Mentorship</h2>
-              <div className="mt-8 grid grid-cols-1 gap-6">
+              <div className="mt-5 grid grid-cols-1 gap-5">
                 <div id="field-mentorshipInterest">
                   <Field
                     id="mentorshipInterest"
@@ -606,11 +606,11 @@ export default function CommunityOnboardingForm() {
               </div>
             </section>
 
-            <hr className="my-10 border-[#f0f0f0]" />
+            <hr className="my-5 border-[#f0f0f0]" />
 
             <section id="community" className="scroll-mt-36 lg:scroll-mt-28">
               <h2 className="font-sans text-xl font-bold tracking-tight text-text-primary md:text-2xl">Community Participation</h2>
-              <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2">
                 <div id="field-participation" className="md:col-span-2">
                   <Field
                     id="participation"
@@ -670,11 +670,11 @@ export default function CommunityOnboardingForm() {
               </div>
             </section>
 
-            <hr className="my-10 border-[#f0f0f0]" />
+            <hr className="my-5 border-[#f0f0f0]" />
 
             <section id="preferences" className="scroll-mt-36 lg:scroll-mt-28">
               <h2 className="font-sans text-xl font-bold tracking-tight text-text-primary md:text-2xl">Investment Preferences</h2>
-              <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2">
                 <div id="field-evaluationCriteria" className="md:col-span-2">
                   <Field
                     id="evaluationCriteria"
@@ -708,11 +708,11 @@ export default function CommunityOnboardingForm() {
               </div>
             </section>
 
-            <hr className="my-10 border-[#f0f0f0]" />
+            <hr className="my-5 border-[#f0f0f0]" />
 
             <section id="final" className="scroll-mt-36 lg:scroll-mt-28">
               <h2 className="font-sans text-xl font-bold tracking-tight text-text-primary md:text-2xl">Final</h2>
-              <div className="mt-8 grid grid-cols-1 gap-6">
+              <div className="mt-5 grid grid-cols-1 gap-5">
                 <Field id="communityGain" label="What would you like to gain from joining the Aamukh Capital community?">
                   <textarea
                     id="communityGain"
@@ -778,7 +778,7 @@ export default function CommunityOnboardingForm() {
               <p className="mt-8 rounded-2xl bg-red-50 px-4 py-3 text-sm text-red-700">{submitMessage}</p>
             )}
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <p className="text-[13px] text-text-muted">Required fields are marked with *</p>
               <button
                 type="submit"

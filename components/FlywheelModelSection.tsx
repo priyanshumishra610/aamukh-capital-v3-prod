@@ -5,11 +5,11 @@ import { motion } from 'framer-motion';
 
 const FlywheelModelSection = () => {
   return (
-    <section id="flywheel" className="w-full bg-[#fffafa] py-[8rem] md:py-[12rem] px-6 lg:px-10 flex flex-col items-center overflow-hidden">
+    <section id="flywheel" className="w-full bg-[#fffafa] py-16 md:py-20 px-6 lg:px-10 flex flex-col items-center overflow-hidden">
       <div className="max-w-[100rem] w-full mx-auto flex flex-col items-center">
 
         {/* Section Header */}
-        <div className="flex flex-col items-center w-full border-t border-border pt-16 md:pt-24 gap-6 text-center mb-16 lg:mb-24">
+        <div className="flex flex-col items-center w-full border-t border-border pt-8 gap-5 text-center mb-10 lg:mb-12">
           <motion.div
             className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-white border border-border shadow-sm"
             initial={{ opacity: 0, scale: 0.9 }}
@@ -29,7 +29,7 @@ const FlywheelModelSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.75, delay: 0.1, ease: [0.19, 1, 0.22, 1] }}
           >
-            The Aamukh <span className="editorial-italic lowercase tracking-normal text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand-300">Flywheel</span>
+            The Aamukh <span className="editorial-italic lowercase tracking-normal text-brand">Flywheel</span>
           </motion.h2>
         </div>
 

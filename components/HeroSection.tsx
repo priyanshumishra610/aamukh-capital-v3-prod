@@ -15,7 +15,6 @@ import {
 } from 'framer-motion';
 import '@/app/hero-motion.css';
 
-const LOADER_EXIT = 2.4;
 const EASE_OUT = [0.23, 1, 0.32, 1] as const;
 const POINTER_SPRING = { stiffness: 140, damping: 22, mass: 0.7 };
 
@@ -135,12 +134,12 @@ const HeroSection = () => {
       ? {
           initial: { opacity: 0 },
           animate: { opacity: 1 },
-          transition: { duration: 0.2, delay: LOADER_EXIT, ease: EASE_OUT },
+          transition: { duration: 0.2, delay, ease: EASE_OUT },
         }
       : {
-          initial: { opacity: 0, transform: 'translateY(14px)' },
+          initial: { opacity: 0, transform: 'translateY(16px)' },
           animate: { opacity: 1, transform: 'translateY(0px)' },
-          transition: { duration: 0.7, delay: LOADER_EXIT + delay, ease: EASE_OUT },
+          transition: { duration: 0.7, delay, ease: EASE_OUT },
         };
 
   const lineEnter = (delay: number) =>
@@ -148,40 +147,40 @@ const HeroSection = () => {
       ? {
           initial: { opacity: 0 },
           animate: { opacity: 1 },
-          transition: { duration: 0.2, delay: LOADER_EXIT, ease: EASE_OUT },
+          transition: { duration: 0.2, delay, ease: EASE_OUT },
         }
       : {
           initial: {
             opacity: 0,
             clipPath: 'inset(110% 0 0 0)',
-            transform: 'translateY(18px)',
+            transform: 'translateY(28px)',
           },
           animate: {
             opacity: 1,
             clipPath: 'inset(0% 0 0 0)',
             transform: 'translateY(0px)',
           },
-          transition: { duration: 0.8, delay: LOADER_EXIT + delay, ease: EASE_OUT },
+          transition: { duration: 0.9, delay, ease: EASE_OUT },
         };
 
   const italicEnter = reduce
     ? {
         initial: { opacity: 0 },
         animate: { opacity: 1 },
-        transition: { duration: 0.2, delay: LOADER_EXIT, ease: EASE_OUT },
+        transition: { duration: 0.2, delay: 0.38, ease: EASE_OUT },
       }
     : {
         initial: {
           opacity: 0,
-          filter: 'blur(6px)',
-          transform: 'translateY(10px) scale(0.97)',
+          filter: 'blur(8px)',
+          transform: 'translateY(12px) scale(0.97)',
         },
         animate: {
           opacity: 1,
           filter: 'blur(0px)',
           transform: 'translateY(0px) scale(1)',
         },
-        transition: { duration: 0.75, delay: LOADER_EXIT + 0.22, ease: EASE_OUT },
+        transition: { duration: 0.85, delay: 0.42, ease: EASE_OUT },
       };
 
   return (
@@ -193,27 +192,48 @@ const HeroSection = () => {
     >
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         <motion.div
-          className="absolute -inset-[8%]"
-          style={
-            interactive
-              ? { transform: bgTransform as MotionValue<string>, willChange: 'transform' }
-              : undefined
+          className="absolute inset-0 overflow-hidden"
+          initial={reduce ? false : { clipPath: 'inset(100% 0 0 0)', opacity: 0.55 }}
+          animate={
+            reduce
+              ? { opacity: 1 }
+              : { clipPath: 'inset(0% 0 0 0)', opacity: 1 }
           }
+          transition={{ duration: 1.05, ease: EASE_OUT }}
         >
-          <Image
-            src="/bg.jpeg"
-            alt="Aamukh Capital Background"
-            fill
-            priority
-            className="object-cover"
-          />
+          <motion.div
+            className="absolute -inset-[8%]"
+            style={
+              interactive
+                ? { transform: bgTransform as MotionValue<string>, willChange: 'transform' }
+                : undefined
+            }
+          >
+            <div className="hero-image-settle absolute inset-0">
+              <Image
+                src="/bg.jpeg"
+                alt="Aamukh Capital Background"
+                fill
+                priority
+                className="object-cover"
+              />
+            </div>
+          </motion.div>
         </motion.div>
-        <div className="absolute inset-0 bg-white/30" />
+        <motion.div
+          className="absolute inset-0 bg-white"
+          initial={{ opacity: reduce ? 0.3 : 0.72 }}
+          animate={{ opacity: 0.3 }}
+          transition={{ duration: 1.15, delay: 0.12, ease: EASE_OUT }}
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
         {interactive && (
           <motion.div
             aria-hidden
             className="absolute left-1/2 top-[42%] h-[58vmax] w-[58vmax] rounded-full"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.45, ease: EASE_OUT }}
             style={{
               transform: lightTransform as MotionValue<string>,
               background:
@@ -226,7 +246,7 @@ const HeroSection = () => {
 
       <div className="relative z-10 flex w-full max-w-[1200px] flex-col items-center text-center">
         <motion.div
-          {...enter(0)}
+          {...enter(0.28)}
           className="hero-badge mb-10 inline-flex items-center gap-2 rounded-full border border-border bg-white/80 px-4 py-2 shadow-sm backdrop-blur-md"
         >
           <span className="hero-live-dot h-2 w-2 rounded-full bg-[#4C6BE8]" />
@@ -235,14 +255,14 @@ const HeroSection = () => {
           </span>
         </motion.div>
 
-        <h1 className="mb-10 w-full font-sans text-[clamp(2.6rem,6.5vw,7rem)] font-extrabold uppercase leading-[0.95] tracking-[-0.04em] text-text-primary drop-shadow-sm">
+        <h1 className="mb-6 w-full font-sans text-[clamp(2.6rem,6.5vw,7rem)] font-extrabold uppercase leading-[0.95] tracking-[-0.04em] text-text-primary drop-shadow-sm">
           <span className="block overflow-hidden">
-            <motion.span className="block" {...lineEnter(0.06)}>
+            <motion.span className="block" {...lineEnter(0.34)}>
               The Future of <br className="hidden md:block" />
             </motion.span>
           </span>
           <span className="block overflow-hidden">
-            <motion.span className="block" {...lineEnter(0.14)}>
+            <motion.span className="block" {...lineEnter(0.44)}>
               Smarter{' '}
               <motion.span
                 {...italicEnter}
@@ -255,7 +275,15 @@ const HeroSection = () => {
         </h1>
 
         <motion.div
-          {...enter(0.28)}
+          aria-hidden
+          className="mb-8 h-px w-16 origin-center bg-[#4C6BE8]"
+          initial={reduce ? { opacity: 0 } : { opacity: 0, transform: 'scaleX(0.4)' }}
+          animate={{ opacity: 1, transform: 'scaleX(1)' }}
+          transition={{ duration: 0.55, delay: 0.62, ease: EASE_OUT }}
+        />
+
+        <motion.div
+          {...enter(0.58)}
           className="flex w-full max-w-2xl flex-col items-center gap-12"
         >
           <p className="text-balance font-sans text-lg leading-relaxed text-text-secondary md:text-xl">

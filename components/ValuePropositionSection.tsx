@@ -13,7 +13,7 @@ const stats = [
 
 const ValuePropositionSection = () => {
   return (
-    <section id="context" className="w-full bg-snow pt-[8rem] pb-[4rem] px-6 lg:px-10 flex flex-col items-center">
+    <section id="context" className="w-full bg-snow pt-16 pb-10 md:pt-20 md:pb-12 px-6 lg:px-10 flex flex-col items-center">
       <div className="max-w-[100rem] w-full mx-auto flex flex-col items-center">
 
         <motion.div

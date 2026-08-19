@@ -40,7 +40,7 @@ export default function TeamExpertiseSection() {
       id="team" 
       ref={containerRef}
       // TWEAK 1: Changed lg:px-[8vw] to lg:px-[4vw] to reduce side margins and let the layout stretch wider.
-      className="relative w-full bg-snow px-[6vw] lg:px-[4vw] py-[15vh] min-h-screen border-t border-border/50 overflow-hidden"
+      className="relative w-full bg-snow px-[6vw] lg:px-[4vw] py-16 md:py-20 border-t border-border/50 overflow-hidden"
     >
       
       {/* Background Subtle Glows */}
@@ -51,7 +51,7 @@ export default function TeamExpertiseSection() {
       <div className="relative z-10 w-full max-w-[1600px] mx-auto">
         
         {/* Header Block */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-8 border-b border-border pb-12">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6 border-b border-border pb-8">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -65,7 +65,7 @@ export default function TeamExpertiseSection() {
             
             <h2 className="font-geom font-medium text-4xl md:text-6xl lg:text-[5rem] leading-[1.05] tracking-[-0.03em] text-text-primary">
               Built by <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4C6BE8] to-[#869CE9]">
+              <span className="text-brand">
                 repeat founders.
               </span>
             </h2>

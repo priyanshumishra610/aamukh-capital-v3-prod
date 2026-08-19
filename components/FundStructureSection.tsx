@@ -32,11 +32,11 @@ const cards = [
 
 const FundStructureSection = () => {
   return (
-    <section id="structure" className="w-full bg-snow py-[10rem] px-6 lg:px-10 flex flex-col items-center">
-      <div className="max-w-[100rem] w-full mx-auto flex flex-col items-center gap-24">
+    <section id="structure" className="w-full bg-snow py-16 md:py-20 px-6 lg:px-10 flex flex-col items-center">
+      <div className="max-w-[100rem] w-full mx-auto flex flex-col items-center gap-10 md:gap-12">
 
         {/* Section Header */}
-        <div className="flex flex-col items-center w-full border-t border-border pt-16 md:pt-24 gap-6">
+        <div className="flex flex-col items-center w-full border-t border-border pt-8 gap-5">
           <motion.div
             className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-white border border-border shadow-sm"
             initial={{ opacity: 0, scale: 0.9 }}

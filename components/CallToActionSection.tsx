@@ -9,7 +9,7 @@ export default function CallToActionSection() {
   const [email, setEmail] = useState('');
 
   return (
-    <section className="relative w-full bg-[#fffafa] pt-[20vh] pb-[15vh] overflow-hidden flex flex-col justify-center items-center border-t border-border/50">
+    <section className="relative w-full bg-[#fffafa] py-16 md:py-24 overflow-hidden flex flex-col justify-center items-center border-t border-border/50">
 
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-[6vw] lg:px-[8vw] flex flex-col items-center text-center">
 
@@ -41,7 +41,7 @@ export default function CallToActionSection() {
               transition={{ duration: 0.85, delay: 0.1, ease }}
             >
               READY TO BUILD <br />
-              <span className="editorial-italic lowercase tracking-normal text-transparent bg-clip-text bg-gradient-to-r from-[#4C6BE8] to-[#869CE9]">
+              <span className="editorial-italic lowercase tracking-normal text-brand">
                 the impossible?
               </span>
             </motion.h2>
