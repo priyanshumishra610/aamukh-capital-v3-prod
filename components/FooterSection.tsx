@@ -72,9 +72,10 @@ const FooterSection = () => {
           >
             <h4 className="font-sans text-sm font-bold tracking-wide text-text-primary border-b border-border/80 pb-3">Entity</h4>
             <ul className="flex flex-col gap-3 font-sans text-[15px] font-medium tracking-tight">
-              <li><a href="#thesis" className="inline-block text-text-secondary hover:text-[#4C6BE8] transition-all">Thesis</a></li>
-              <li><a href="#portfolio" className="inline-block text-text-secondary hover:text-[#4C6BE8] transition-all">Portfolio</a></li>
-              <li><a href="#team" className="inline-block text-text-secondary hover:text-[#4C6BE8] transition-all">Principals</a></li>
+              <li><a href="/#thesis" className="inline-block text-text-secondary hover:text-[#4C6BE8] transition-all">Thesis</a></li>
+              <li><a href="/#portfolio" className="inline-block text-text-secondary hover:text-[#4C6BE8] transition-all">Portfolio</a></li>
+              <li><a href="/#team" className="inline-block text-text-secondary hover:text-[#4C6BE8] transition-all">Principals</a></li>
+              <li><a href="/community" className="inline-block text-text-secondary hover:text-[#4C6BE8] transition-all">Join Community</a></li>
             </ul>
           </motion.div>
 
@@ -90,15 +91,6 @@ const FooterSection = () => {
               Bangalore, India <br />
               The Global Hub for Technical Innovation.
             </p>
-            <div className="mt-2 flex flex-col gap-2 items-start">
-              <div className="flex items-center gap-2 bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-full border border-emerald-100">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                </span>
-                <span className="font-mono text-[10px] uppercase tracking-widest font-bold">Actively Investing</span>
-              </div>
-            </div>
           </motion.div>
         </motion.div>
 
