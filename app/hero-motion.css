@@ -8,7 +8,7 @@
 }
 
 .hero-image-settle {
-  animation: heroImageSettle 1.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+  animation: heroImageSettle 0.95s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
 
 @keyframes heroPlayRing {
@@ -95,7 +95,7 @@
 .hero-growth-path {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-  animation: heroDrawPath 1.45s cubic-bezier(0.23, 1, 0.32, 1) 0.4s forwards;
+  animation: heroDrawPath 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.22s forwards;
 }
 
 @keyframes heroDrawPath {
@@ -105,7 +105,7 @@
 }
 
 .hero-ornament {
-  animation: heroOrnamentIn 0.7s cubic-bezier(0.23, 1, 0.32, 1) 0.55s both;
+  animation: heroOrnamentIn 0.45s cubic-bezier(0.23, 1, 0.32, 1) 0.32s both;
 }
 
 .hero-orbit {

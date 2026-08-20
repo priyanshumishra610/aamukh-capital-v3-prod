@@ -1,85 +1,79 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { ArrowUpRight } from 'lucide-react';
 
 const ease = [0.19, 1, 0.22, 1] as const;
 
 export default function CallToActionSection() {
-  const [email, setEmail] = useState('');
-
   return (
-    <section className="relative w-full bg-[#fffafa] py-16 md:py-24 overflow-hidden flex flex-col justify-center items-center border-t border-border/50">
-
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-[6vw] lg:px-[8vw] flex flex-col items-center text-center">
-
-        <motion.div
-          className="w-full flex flex-col items-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: '-8%' }}
-          transition={{ duration: 0.5, ease }}
+    <section
+      id="apply"
+      className="page-surface w-full py-16 md:py-24 border-t border-border/50"
+    >
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-[6vw] lg:px-[8vw]">
+        <motion.h2
+          className="font-geom font-medium text-4xl md:text-5xl lg:text-6xl tracking-[-0.03em] text-text-primary leading-[1.1] mb-4"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.48, ease }}
         >
-          <motion.div
-            className="inline-flex items-center justify-center px-4 py-1.5 mb-8 rounded-full bg-white border border-[#4C6BE8]/20 shadow-sm"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.05, ease }}
-          >
-            <span className="font-mono text-xs font-semibold tracking-widest text-[#4C6BE8] uppercase">
-              Initiate Contact
-            </span>
-          </motion.div>
+          Two ways in
+        </motion.h2>
+        <motion.p
+          className="font-sans text-lg text-text-secondary max-w-xl mb-12 leading-relaxed"
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.05, ease }}
+        >
+          Allocators join the syndicate. Founders write to the firm. Same desk, different door.
+        </motion.p>
 
-          <div className="overflow-hidden">
-            <motion.h2
-              className="font-sans font-extrabold text-[clamp(3.5rem,8.5vw,9rem)] tracking-[-0.04em] uppercase text-text-primary leading-[0.9] mb-12"
-              initial={{ y: '60%', opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.85, delay: 0.1, ease }}
-            >
-              READY TO BUILD <br />
-              <span className="editorial-italic lowercase tracking-normal text-brand">
-                the impossible?
-              </span>
-            </motion.h2>
-          </div>
-
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 border-t border-border pt-10">
           <motion.div
-            className="relative w-full max-w-4xl group mt-4"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.25, ease }}
+            transition={{ duration: 0.42, ease }}
+            className="flex flex-col gap-5"
           >
-            <div className="relative flex w-full items-center rounded-full bg-white/90 border border-border shadow-sm p-2 backdrop-blur-xl">
-              <div className="pl-6 md:pl-8 text-[#4C6BE8] font-mono text-xl select-none font-bold">{'>'}</div>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="enter your pitch deck URL_"
-                className="w-full bg-transparent px-4 py-4 md:py-6 font-mono text-sm md:text-lg text-text-primary placeholder-text-muted outline-none"
-              />
-              <button className="shrink-0 py-4 md:py-6 px-8 md:px-12 bg-[#4C6BE8] hover:bg-[#3a58d6] text-white rounded-[10rem] font-mono uppercase tracking-widest text-xs md:text-sm font-semibold transition-[background-color,transform] duration-200 ease-out active:scale-[0.97]">
-                Execute
-              </button>
-            </div>
+            <h3 className="font-geom text-2xl md:text-3xl font-medium text-text-primary">Allocators</h3>
+            <p className="font-sans text-base md:text-lg text-text-secondary leading-relaxed">
+              Operator-led book. GP capital sits in the same deals. Onboarding is a form, not a waiting room.
+            </p>
+            <Link
+              href="/community"
+              className="inline-flex w-fit items-center gap-2 min-h-12 px-7 py-3.5 bg-[#4C6BE8] hover:bg-[#2A4ED9] text-white rounded-full text-sm font-sans font-semibold"
+            >
+              Join the syndicate
+              <ArrowUpRight className="w-4 h-4" />
+            </Link>
           </motion.div>
 
           <motion.div
-            className="mt-8 flex items-center gap-2 font-mono text-xs text-text-muted uppercase tracking-widest bg-white/50 px-4 py-2 rounded-full border border-border/50"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4, ease }}
+            transition={{ duration: 0.42, delay: 0.06, ease }}
+            className="flex flex-col gap-5 md:border-l md:border-border md:pl-16"
           >
-            <span className="h-2 w-2 rounded-full bg-[#4C6BE8] animate-pulse" />
-            Syndicate Network Status: Operational
+            <h3 className="font-geom text-2xl md:text-3xl font-medium text-text-primary">Founders</h3>
+            <p className="font-sans text-base md:text-lg text-text-secondary leading-relaxed">
+              Discovery is ₹5–25 lakhs. Signal is ₹1–10 Cr. Send the company to the inbox we actually read.
+            </p>
+            <a
+              href="mailto:contact@aamukh.capital?subject=Company%20pitch"
+              className="glass-panel inline-flex w-fit items-center gap-2 min-h-12 px-7 py-3.5 text-text-primary rounded-full text-sm font-sans font-semibold hover:border-brand"
+            >
+              Email a pitch
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

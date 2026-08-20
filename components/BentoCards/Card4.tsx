@@ -2,7 +2,7 @@ import React from 'react';
 
 const Card4: React.FC = () => {
   return (
-    <div className="w-full h-full min-h-[360px] bg-white rounded-card md:rounded-[2rem] p-6 md:p-8 flex flex-col border border-border shadow-sm font-geom relative overflow-hidden group">
+    <div className="w-full h-full min-h-[360px] glass-panel rounded-card md:rounded-[2rem] p-6 md:p-8 flex flex-col font-geom relative overflow-hidden group">
       
       <div className="flex-1 w-full relative flex flex-col items-center justify-center mb-6 z-10">
         
@@ -48,25 +48,25 @@ const Card4: React.FC = () => {
           </div>
 
           {/* UI Boxes */}
-          <div className="absolute top-[-10px] left-[-20px] animate-bounce" style={{ animationDuration: '3s' }}>
+          <div className="absolute top-[-10px] left-[-20px]">
              <div className="bg-white px-3 py-1.5 rounded-full border border-border shadow-md flex items-center gap-1.5">
                 <div className="w-4 h-4 rounded-full bg-green-100 flex items-center justify-center">
                    <svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="3" className="w-2.5 h-2.5" strokeLinecap="round" strokeLinejoin="round">
                      <path d="M20 6L9 17l-5-5"/>
                    </svg>
                 </div>
-                <span className="font-mono text-[10px] font-bold text-text-primary">20% Carry</span>
+                <span className="font-sans text-xs font-semibold text-text-primary">20% GP</span>
              </div>
           </div>
 
-          <div className="absolute top-[5px] right-[-20px] animate-bounce" style={{ animationDuration: '3.5s' }}>
+          <div className="absolute top-[5px] right-[-20px]">
              <div className="bg-white px-3 py-1.5 rounded-full border border-border shadow-md flex items-center gap-1.5">
                 <div className="w-4 h-4 rounded-full bg-green-100 flex items-center justify-center">
                    <svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="3" className="w-2.5 h-2.5" strokeLinecap="round" strokeLinejoin="round">
                      <path d="M20 6L9 17l-5-5"/>
                    </svg>
                 </div>
-                <span className="font-mono text-[10px] font-bold text-text-primary">10% Skin</span>
+                <span className="font-sans text-xs font-semibold text-text-primary">10% GP</span>
              </div>
           </div>
 
@@ -77,7 +77,7 @@ const Card4: React.FC = () => {
       <div className="mt-auto z-10 pt-4 border-t border-border/50 text-center">
         <h3 className="text-[19px] font-medium text-text-primary mb-2 tracking-tight">Aligned Interests</h3>
         <p className="text-[14px] text-text-secondary leading-relaxed max-w-[95%] mx-auto">
-          Emphasizing that we invest alongside our partners with significant skin in the game.
+          We invest alongside our partners with GP capital in the same deals.
         </p>
       </div>
     </div>

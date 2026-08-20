@@ -120,7 +120,7 @@ const EcosystemCard = () => {
   const SWING_FACTOR = 0.5;
 
   return (
-    <div ref={ref} className="w-full h-full min-h-[440px] bg-white rounded-card md:rounded-[2rem] p-6 md:p-8 flex flex-col border border-border shadow-sm font-sans relative overflow-hidden group">
+    <div ref={ref} className="w-full h-full min-h-[440px] glass-panel rounded-card md:rounded-[2rem] p-6 md:p-8 flex flex-col font-sans relative overflow-hidden group">
       
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-[#4C6BE8]/5 blur-[50px] rounded-full pointer-events-none" />
 

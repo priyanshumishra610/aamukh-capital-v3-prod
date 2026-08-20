@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const FlywheelModelSection = () => {
   return (
-    <section id="flywheel" className="w-full bg-[#fffafa] py-16 md:py-20 px-6 lg:px-10 flex flex-col items-center overflow-hidden">
+    <section id="flywheel" className="page-surface w-full py-16 md:py-20 px-6 lg:px-10 flex flex-col items-center overflow-hidden">
       <div className="max-w-[100rem] w-full mx-auto flex flex-col items-center">
 
         {/* Section Header */}
@@ -15,7 +15,7 @@ const FlywheelModelSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: '-8%' }}
-            transition={{ duration: 0.5, ease: [0.19, 1, 0.22, 1] }}
+            transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
           >
             <span className="font-mono text-xs font-semibold tracking-widest text-brand uppercase">
               The Methodology
@@ -24,10 +24,10 @@ const FlywheelModelSection = () => {
 
           <motion.h2
             className="font-sans font-bold text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-[-0.04em] text-text-primary uppercase"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.75, delay: 0.1, ease: [0.19, 1, 0.22, 1] }}
+            transition={{ duration: 0.48, delay: 0.05, ease: [0.23, 1, 0.32, 1] }}
           >
             The Aamukh <span className="editorial-italic lowercase tracking-normal text-brand">Flywheel</span>
           </motion.h2>

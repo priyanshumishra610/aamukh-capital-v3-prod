@@ -79,7 +79,7 @@ const FunnelCard = () => {
   const pathData = `M ${containerWidth / 2} 0 C ${-containerWidth / 2} ${controlPoint1Y}, ${containerWidth * 1.5} ${controlPoint2Y}, ${containerWidth / 2} ${containerHeight}`;
 
   return (
-    <div ref={ref} className="w-full h-full min-h-[550px] bg-white rounded-card md:rounded-[2rem] p-6 md:p-8 flex flex-col border border-border shadow-sm font-sans relative overflow-hidden group">
+    <div ref={ref} className="w-full h-full min-h-[550px] glass-panel rounded-card md:rounded-[2rem] p-6 md:p-8 flex flex-col font-sans relative overflow-hidden group">
       
       {/* Background Decor - Increased opacity for more context */}
       <div className="absolute top-[-50px] right-[-50px] w-[200px] h-[200px] bg-brand/10 rounded-full blur-[40px] pointer-events-none" />

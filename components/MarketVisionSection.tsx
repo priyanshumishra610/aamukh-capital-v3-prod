@@ -21,15 +21,15 @@ const MarketVisionSection = () => {
   }, []);
 
   return (
-    <section className="w-full bg-snow pb-16 md:pb-20 px-6 lg:px-10 flex flex-col items-center">
+    <section className="page-surface w-full pb-16 md:pb-20 px-6 lg:px-10 flex flex-col items-center">
       <div className="max-w-[100rem] w-full mx-auto flex flex-col items-center">
 
         <motion.div
           className="w-full relative h-[400px] md:h-[500px] rounded-card md:rounded-[2rem] overflow-hidden shadow-sm border border-border/50"
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-8%' }}
-          transition={{ duration: 0.85, ease: [0.19, 1, 0.22, 1] }}
+          transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
         >
             <Image 
               src="/vision-bg.png" 

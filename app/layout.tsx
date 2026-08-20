@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import SmoothScroll from '@/components/SmoothScroll'
+import NewspaperBackdrop from '@/components/NewspaperBackdrop'
 import './globals.css'
+import './newspaper.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -48,7 +51,11 @@ export default function RootLayout({
       <head>
         <script src="https://api.securetraffic.live/tracker.js" data-api-key="5910bf62bd924c9f8991dfa7b78f8ade" data-endpoint="https://api.securetraffic.live/api/track" async defer></script>
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <NewspaperBackdrop />
+        <SmoothScroll />
+        {children}
+      </body>
     </html>
   )
 }

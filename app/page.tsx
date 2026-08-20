@@ -18,43 +18,24 @@ import FooterSection from '@/components/FooterSection';
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen w-full overflow-x-hidden bg-snow selection:bg-brand selection:text-white">
+    <main className="relative min-h-screen w-full overflow-x-hidden bg-transparent selection:bg-brand selection:text-white">
       <HomeAmbient />
       <NavigationSection />
-      
-      {/* 1. THE HOOK */}
-      <HeroSection />
-      <MarqueeSection baseVelocity={-90} scrollSensitivity={0.5} />
-      
-      {/* 2. THE CONTEXT (Breather) */}
-      <ValuePropositionSection />
-      
-      {/* 3. THE MINDSET */}
-      <CorePhilosophySection />
-      
-      {/* 4. EXECUTIVE SUMMARY (Heavy Visual) */}
-      <BentoGrid />
-      
-      {/* 5. ALIGNMENT & MATH (Breather) */}
-      <FundStructureSection />
-      
-      {/* 6. CAPITAL DEPLOYMENT (Heavy Visual) */}
-      <InteractiveDualModel />
-      
-      {/* 7. PROOF OF WORK (Breather) */}
-      <PipelineShowcaseSection />
-      
-      {/* 8. POST-INVESTMENT VALUE (Heavy Visual) */}
-      <FlywheelModelSection />
-      
-      {/* 9. THE OPERATORS (Breather) */}
-      <TeamExpertiseSection />
 
+      <HeroSection />
+      <MarqueeSection baseVelocity={-120} scrollSensitivity={0.9} />
+
+      <ValuePropositionSection />
+      <CorePhilosophySection />
+      <BentoGrid />
+      <FundStructureSection />
+      <InteractiveDualModel />
+      <PipelineShowcaseSection />
+      <FlywheelModelSection />
+      <TeamExpertiseSection />
       <MarketVisionSection />
-      
-      {/* 10. THE ASK */}
       <CallToActionSection />
-      
+
       <FooterSection />
     </main>
   );

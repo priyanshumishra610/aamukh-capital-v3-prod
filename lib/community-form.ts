@@ -24,7 +24,6 @@ export const INVESTMENT_STAGES = [
 ] as const;
 
 export const TICKET_SIZES = [
-  '₹1-5 Lakh',
   '₹5-10 Lakh',
   '₹10-25 Lakh',
   '₹25 Lakh-₹1 Crore',
@@ -222,12 +221,18 @@ export function validateCommunityForm(form: CommunityFormState): CommunityFormEr
   else if (!EMAIL_PATTERN.test(form.email.trim())) errors.email = 'Enter a valid email address.';
   if (!form.phone.trim()) errors.phone = 'Enter your phone number.';
   if (!form.city.trim()) errors.city = 'Enter your city.';
+  if (!form.linkedin.trim()) errors.linkedin = 'Enter your LinkedIn profile URL.';
+  else if (!/linkedin\.com/i.test(form.linkedin.trim())) {
+    errors.linkedin = 'Enter a valid LinkedIn URL.';
+  }
   if (!form.designation.trim()) errors.designation = 'Enter your designation or organization.';
 
   if (!form.investedBefore) errors.investedBefore = 'Select whether you have invested before.';
   if (form.investedBefore === 'Yes' && !form.startupCount) {
     errors.startupCount = 'Select how many startups you have invested in.';
   }
+
+  if (!form.preferredStage) errors.preferredStage = 'Select a preferred investment stage.';
 
   if (form.investmentSectors.length === 0) {
     errors.investmentSectors = 'Select at least one investment sector.';
@@ -262,8 +267,14 @@ export function validateCommunityForm(form: CommunityFormState): CommunityFormEr
     errors.participationOther = 'Specify how you would like to participate.';
   }
 
-  if (form.evaluationCriteria.length > 3) {
+  if (form.evaluationCriteria.length === 0) {
+    errors.evaluationCriteria = 'Select at least one evaluation criterion.';
+  } else if (form.evaluationCriteria.length > 3) {
     errors.evaluationCriteria = 'Select up to 3 evaluation criteria.';
+  }
+
+  if (form.geographies.length === 0) {
+    errors.geographies = 'Select at least one geography.';
   }
 
   if (form.hearAbout === 'Other' && !form.hearAboutOther.trim()) {

@@ -23,7 +23,7 @@ const Card5: React.FC = () => {
   ];
 
   return (
-    <div className="w-full h-full min-h-[360px] bg-white rounded-card md:rounded-[2rem] p-6 md:p-8 flex flex-col border border-border shadow-sm font-geom relative overflow-hidden group">
+    <div className="w-full h-full min-h-[360px] glass-panel rounded-card md:rounded-[2rem] p-6 md:p-8 flex flex-col font-geom relative overflow-hidden group">
       
       <style>{`
         @keyframes orbitNet {

@@ -46,7 +46,7 @@ const useMarqueeAnimation = (
       }
       
       const targetVelocity = baseVelocity + scrollInducedVelocity;
-      const easingFactor = 1 - Math.exp(-deltaTime / 0.25);
+      const easingFactor = 1 - Math.exp(-deltaTime / 0.14);
       velocityRef.current += (targetVelocity - velocityRef.current) * easingFactor;
 
       let nextOffset = offsetRef.current + velocityRef.current * deltaTime;
@@ -99,7 +99,7 @@ const MarqueeSection = ({
   useMarqueeAnimation(trackRef, seqWidth, baseVelocity, scrollSensitivity);
 
   return (
-    <section className={`w-full overflow-hidden py-8 md:py-10 bg-snow border-y border-border/60 ${className}`}>
+    <section className={`page-surface w-full overflow-hidden py-8 md:py-10 border-y border-border/60 ${className}`}>
       <div
         ref={trackRef}
         className="flex whitespace-nowrap will-change-transform"

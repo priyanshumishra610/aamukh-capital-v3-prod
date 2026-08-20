@@ -17,8 +17,8 @@ export default function HomeAmbient() {
 
   const x = useMotionValue(0.5);
   const y = useMotionValue(0.5);
-  const sx = useSpring(x, { stiffness: 70, damping: 22, mass: 0.9 });
-  const sy = useSpring(y, { stiffness: 70, damping: 22, mass: 0.9 });
+  const sx = useSpring(x, { stiffness: 140, damping: 24, mass: 0.65 });
+  const sy = useSpring(y, { stiffness: 140, damping: 24, mass: 0.65 });
   const background = useTransform(
     [sx, sy],
     (latest: number[]) =>

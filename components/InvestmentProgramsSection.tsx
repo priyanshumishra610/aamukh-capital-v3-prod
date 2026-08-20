@@ -2,7 +2,7 @@ import React from 'react';
 
 const InvestmentProgramsSection = () => {
   return (
-    <section id="collective" className="w-full bg-snow py-16 md:py-20 px-6 lg:px-10 flex flex-col items-center">
+    <section id="collective" className="page-surface w-full py-16 md:py-20 px-6 lg:px-10 flex flex-col items-center">
       <div className="max-w-[100rem] w-full mx-auto flex flex-col items-center gap-10 md:gap-12">
 
         {/* Section Intro */}

@@ -116,12 +116,16 @@ export default function CommunityOnboardingForm() {
       form.email,
       form.phone,
       form.city,
+      form.linkedin,
       form.designation,
       form.investedBefore,
+      form.preferredStage,
       form.investmentSectors.length,
       form.expertiseSectors.length,
       form.mentorshipInterest,
       form.participation.length,
+      form.evaluationCriteria.length,
+      form.geographies.length,
       form.consent,
     ];
     return Math.round((checks.filter(Boolean).length / checks.length) * 100);
@@ -193,7 +197,7 @@ export default function CommunityOnboardingForm() {
           transition={{ duration: 0.6, ease }}
           className="rounded-[2rem] bg-black/[0.03] p-1.5"
         >
-          <div className="flex min-h-[420px] flex-col items-start justify-center rounded-[calc(2rem-0.375rem)] bg-white px-8 py-16 md:px-16">
+          <div className="flex min-h-[420px] flex-col items-start justify-center rounded-[calc(2rem-0.375rem)] glass-panel px-8 py-16 md:px-16">
             <CheckCircle2 className="mb-6 h-10 w-10 text-brand" strokeWidth={1.75} />
             <h2 className="max-w-2xl font-sans text-4xl font-extrabold tracking-tight text-text-primary md:text-5xl">
               Welcome to the <span className="editorial-italic text-brand">collective.</span>
@@ -272,14 +276,17 @@ export default function CommunityOnboardingForm() {
             <span className="editorial-italic tracking-normal text-brand">Onboarding</span>
           </h1>
           <p className="mt-4 max-w-[62ch] text-base leading-relaxed text-text-secondary md:text-[17px]">
-            Aamukh Capital is building a community of angel investors, founders, operators, and industry experts who want to participate in the early-stage startup ecosystem. This form will help us understand your investment experience, sector expertise, investment interests, and potential interest in mentoring startups.
+            Aamukh Capital is building a private community of investors and mentors backing India&apos;s early-stage founders.
+          </p>
+          <p className="mt-3 max-w-[62ch] text-base leading-relaxed text-text-secondary md:text-[17px]">
+            We currently invest through direct cap table deals only, with no exit load. Members get access to curated deal flow from a fund that co-invests its own capital in every transaction, up to 20% of the cheque on early-stage deals.
           </p>
           <p className="mt-3 text-sm text-text-muted">About 6 minutes to complete.</p>
         </motion.header>
 
         <form
           onSubmit={handleSubmit}
-          className="min-w-0 [grid-area:form] rounded-[1.75rem] bg-white px-5 py-6 ring-1 ring-[#ececec] sm:px-8 sm:py-7 md:px-10"
+          className="min-w-0 [grid-area:form] glass-panel rounded-[1.75rem] px-5 py-6 sm:px-8 sm:py-7 md:px-10"
           noValidate
         >
             <section id="personal" className="scroll-mt-36 lg:scroll-mt-28">
@@ -331,16 +338,18 @@ export default function CommunityOnboardingForm() {
                     />
                   </Field>
                 </div>
-                <Field id="linkedin" label="LinkedIn Profile">
-                  <input
-                    id="linkedin"
-                    type="url"
-                    value={form.linkedin}
-                    onChange={(e) => setField('linkedin', e.target.value)}
-                    placeholder="https://linkedin.com/in/..."
-                    className={`${inputClass} ${fieldBorder()}`}
-                  />
-                </Field>
+                <div id="field-linkedin">
+                  <Field id="linkedin" label="LinkedIn Profile" required error={errors.linkedin}>
+                    <input
+                      id="linkedin"
+                      type="url"
+                      value={form.linkedin}
+                      onChange={(e) => setField('linkedin', e.target.value)}
+                      placeholder="https://linkedin.com/in/..."
+                      className={`${inputClass} ${fieldBorder(errors.linkedin)}`}
+                    />
+                  </Field>
+                </div>
                 <div id="field-designation">
                   <Field id="designation" label="Current Designation / Organization" required error={errors.designation}>
                     <input
@@ -411,14 +420,22 @@ export default function CommunityOnboardingForm() {
                   )}
                 </AnimatePresence>
 
-                <Field id="preferredStage" label="What stage of startups do you prefer investing in?">
-                  <SelectMenu
+                <div id="field-preferredStage">
+                  <Field
                     id="preferredStage"
-                    options={INVESTMENT_STAGES}
-                    value={form.preferredStage}
-                    onChange={(value) => setField('preferredStage', value as string)}
-                  />
-                </Field>
+                    label="What stage of startups do you prefer investing in?"
+                    required
+                    error={errors.preferredStage}
+                  >
+                    <SelectMenu
+                      id="preferredStage"
+                      options={INVESTMENT_STAGES}
+                      value={form.preferredStage}
+                      onChange={(value) => setField('preferredStage', value as string)}
+                      error={errors.preferredStage}
+                    />
+                  </Field>
+                </div>
 
                 <Field id="ticketSize" label="What is your typical investment ticket size?">
                   <SelectMenu
@@ -679,6 +696,7 @@ export default function CommunityOnboardingForm() {
                   <Field
                     id="evaluationCriteria"
                     label="What are you primarily looking for when evaluating a startup?"
+                    required
                     hint="Select up to 3."
                     error={errors.evaluationCriteria}
                   >
@@ -694,14 +712,20 @@ export default function CommunityOnboardingForm() {
                   </Field>
                 </div>
 
-                <div className="md:col-span-2">
-                  <Field id="geographies" label="What geographies are you open to investing in?">
+                <div id="field-geographies" className="md:col-span-2">
+                  <Field
+                    id="geographies"
+                    label="What geographies are you open to investing in?"
+                    required
+                    error={errors.geographies}
+                  >
                     <SelectMenu
                       id="geographies"
                       multiple
                       options={GEOGRAPHIES}
                       value={form.geographies}
                       onChange={(value) => setField('geographies', value as string[])}
+                      error={errors.geographies}
                     />
                   </Field>
                 </div>

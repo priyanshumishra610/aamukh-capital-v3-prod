@@ -13,15 +13,15 @@ const stats = [
 
 const ValuePropositionSection = () => {
   return (
-    <section id="context" className="w-full bg-snow pt-16 pb-10 md:pt-20 md:pb-12 px-6 lg:px-10 flex flex-col items-center">
+    <section id="context" className="page-surface w-full pt-16 pb-10 md:pt-20 md:pb-12 px-6 lg:px-10 flex flex-col items-center">
       <div className="max-w-[100rem] w-full mx-auto flex flex-col items-center">
 
         <motion.div
-          className="w-full bg-background-secondary rounded-card p-8 md:p-12 border border-border flex flex-col lg:flex-row items-center justify-between gap-10 shadow-sm"
-          initial={{ opacity: 0, y: 50 }}
+          className="w-full glass-panel rounded-card p-8 md:p-12 flex flex-col lg:flex-row items-center justify-between gap-10"
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-8%' }}
-          transition={{ duration: 0.8, ease }}
+          transition={{ duration: 0.48, ease }}
         >
           <div className="max-w-2xl">
             <motion.div
@@ -29,7 +29,7 @@ const ValuePropositionSection = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.15, ease }}
+              transition={{ duration: 0.4, delay: 0.06, ease }}
             >
               <span className="font-mono text-xs font-semibold tracking-widest text-brand uppercase">
                 The Macro Context
@@ -38,20 +38,20 @@ const ValuePropositionSection = () => {
 
             <motion.h3
               className="font-geom font-medium text-3xl md:text-4xl tracking-[-0.02em] mb-4 text-text-primary leading-tight"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2, ease }}
+              transition={{ duration: 0.45, delay: 0.08, ease }}
             >
               India's Unprecedented Scale
             </motion.h3>
 
             <motion.p
               className="font-geom text-lg text-text-secondary leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3, ease }}
+              transition={{ duration: 0.45, delay: 0.12, ease }}
             >
               We are investing in the world's most dynamic startup ecosystem at a historic inflection point. The depth of talent and ambition is driving exponential value creation.
             </motion.p>
@@ -62,10 +62,10 @@ const ValuePropositionSection = () => {
               <motion.div
                 key={stat.label}
                 className="bg-white px-6 py-6 rounded-2xl border border-border min-w-[140px] shadow-sm transition-[transform,box-shadow] duration-200 ease-out [@media(hover:hover)_and_(pointer:fine)]:hover:-translate-y-1 [@media(hover:hover)_and_(pointer:fine)]:hover:shadow-md"
-                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                initial={{ opacity: 0, y: 16, scale: 0.97 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 + i * 0.1, ease }}
+                transition={{ duration: 0.42, delay: 0.12 + i * 0.06, ease }}
               >
                 <div className="font-geom text-3xl md:text-4xl font-medium text-brand tracking-tight mb-1">
                   {stat.value}

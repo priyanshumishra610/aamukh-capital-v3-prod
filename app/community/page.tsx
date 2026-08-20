@@ -6,12 +6,12 @@ import CommunityOnboardingForm from '@/components/community/CommunityOnboardingF
 export const metadata: Metadata = {
   title: 'Angel Investor Community Onboarding | Aamukh Capital',
   description:
-    'Join the Aamukh Capital community of angel investors, founders, operators, and industry experts. Share your investment experience, sector expertise, and interest in mentoring startups.',
+    'Aamukh Capital is building a private community of investors and mentors backing India\'s early-stage founders. Direct cap table deals only, with no exit load. The fund co-invests up to 20% of the cheque on early-stage deals.',
 };
 
 export default function CommunityPage() {
   return (
-    <main className="relative min-h-[100dvh] w-full overflow-x-clip bg-snow selection:bg-brand selection:text-white">
+    <main className="page-surface relative min-h-[100dvh] w-full overflow-x-clip selection:bg-brand selection:text-white">
       <NavigationSection />
       <CommunityOnboardingForm />
       <FooterSection />
