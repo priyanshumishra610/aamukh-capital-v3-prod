@@ -1,5 +1,5 @@
 /**
- * Aamukh Capital - Angel Investor Community Form
+ * Aamukh Capital - Community and Mentor Onboarding Forms
  *
  * First-time setup
  * 1. In this Apps Script project, run createSheetAndHeaders from the editor
@@ -10,9 +10,13 @@
  * 3. Copy the web app URL into lib/community-form.ts or
  *    NEXT_PUBLIC_GOOGLE_SCRIPT_URL.
  * 4. After any edit, deploy a new version.
+ *
+ * Community payloads use formType: "community".
+ * Mentor payloads use formType: "mentor" and write to a separate tab.
  */
 
 var SHEET_NAME = 'Community Onboarding';
+var MENTOR_SHEET_NAME = 'Mentor Onboarding';
 var SPREADSHEET_ID = ''; // filled automatically by createSheetAndHeaders if empty
 
 var HEADER_BG = '#4C6BE8';
@@ -52,6 +56,42 @@ var HEADERS = [
   'How They Heard Other',
   'Consent',
   'Source',
+];
+
+var MENTOR_HEADERS = [
+  'Timestamp',
+  'Full Name',
+  'Email',
+  'LinkedIn',
+  'Current Role',
+  'Years of Experience',
+  'Sectors',
+  'Functional Expertise',
+  'Stage',
+  'Contact Preference',
+  'Contact Number',
+  'Investing Interest',
+  'Notes',
+  'Source',
+  'Form Type',
+];
+
+var MENTOR_FIELD_KEYS = [
+  'timestamp',
+  'fullName',
+  'email',
+  'linkedin',
+  'currentRole',
+  'yearsExperience',
+  'sectors',
+  'functionalExpertise',
+  'stage',
+  'contactPreference',
+  'phone',
+  'investingInterest',
+  'notes',
+  'source',
+  'formType',
 ];
 
 var FIELD_KEYS = [
@@ -111,15 +151,22 @@ function createSheetAndHeaders() {
   writeHeaders_(sheet);
   sheet.autoResizeColumns(1, HEADERS.length);
 
+  var mentorSheet = getOrCreateMentorSheet_(ss);
+  writeMentorHeaders_(mentorSheet);
+  mentorSheet.autoResizeColumns(1, MENTOR_HEADERS.length);
+
   Logger.log('Sheet ready: ' + ss.getUrl());
   Logger.log('Spreadsheet ID: ' + ss.getId());
   Logger.log('Tab: ' + SHEET_NAME);
+  Logger.log('Mentor tab: ' + MENTOR_SHEET_NAME);
 
   return {
     spreadsheetId: ss.getId(),
     spreadsheetUrl: ss.getUrl(),
     sheetName: SHEET_NAME,
+    mentorSheetName: MENTOR_SHEET_NAME,
     headers: HEADERS.length,
+    mentorHeaders: MENTOR_HEADERS.length,
   };
 }
 
@@ -137,7 +184,7 @@ function doGet(e) {
 
     return json_({
       result: 'ok',
-      form: 'Aamukh Capital Community Onboarding',
+      form: 'Aamukh Capital Community and Mentor Onboarding',
       endpoints: {
         submit: 'POST JSON body to this URL',
         responses: '?action=responses',
@@ -156,10 +203,10 @@ function doPost(e) {
   try {
     var data = fetchFormData(e);
     if (!data.fullName && !data.email) {
-      throw new Error('Form payload is empty. Expected JSON fields from the community form.');
+      throw new Error('Form payload is empty. Expected JSON fields from the onboarding form.');
     }
 
-    var saved = saveFormResponse(data);
+    var saved = isMentorPayload_(data) ? saveMentorResponse(data) : saveFormResponse(data);
 
     return json_({
       result: 'success',
@@ -178,6 +225,14 @@ function doPost(e) {
  * Accepts JSON (text/plain or application/json) and form-urlencoded fields.
  */
 function fetchFormData(e) {
+  var raw = parseRawPayload_(e);
+  if (isMentorPayload_(raw)) {
+    return normalizeMentorData_(raw);
+  }
+  return normalizeFormData_(raw);
+}
+
+function parseRawPayload_(e) {
   var raw = {};
 
   if (e && e.postData && e.postData.contents) {
@@ -191,7 +246,14 @@ function fetchFormData(e) {
     raw = e.parameter;
   }
 
-  return normalizeFormData_(raw);
+  return raw || {};
+}
+
+function isMentorPayload_(raw) {
+  return Boolean(
+    raw &&
+      (raw.formType === 'mentor' || raw.source === 'aamukh-capital-mentor')
+  );
 }
 
 /**
@@ -348,4 +410,75 @@ function json_(payload) {
   return ContentService
     .createTextOutput(JSON.stringify(payload))
     .setMimeType(ContentService.MimeType.JSON);
+}
+
+function saveMentorResponse(data) {
+  var ss = getOrCreateSpreadsheet_();
+  var sheet = getOrCreateMentorSheet_(ss);
+  writeMentorHeaders_(sheet);
+
+  var rowValues = mentorRowFromData_(data);
+  sheet.appendRow(rowValues);
+
+  var row = sheet.getLastRow();
+  sheet.getRange(row, 1, 1, MENTOR_HEADERS.length).setVerticalAlignment('top').setWrap(true);
+
+  return { row: row, values: rowValues, sheet: MENTOR_SHEET_NAME };
+}
+
+function normalizeMentorData_(raw) {
+  raw = raw || {};
+  var data = {};
+
+  for (var i = 0; i < MENTOR_FIELD_KEYS.length; i++) {
+    var key = MENTOR_FIELD_KEYS[i];
+    data[key] = stringifyValue_(raw[key]);
+  }
+
+  if (!data.timestamp) {
+    data.timestamp = new Date().toISOString();
+  }
+  if (!data.source) {
+    data.source = 'aamukh-capital-mentor';
+  }
+  data.formType = 'mentor';
+
+  return data;
+}
+
+function mentorRowFromData_(data) {
+  data = data || {};
+  var row = [];
+  for (var i = 0; i < MENTOR_FIELD_KEYS.length; i++) {
+    row.push(data[MENTOR_FIELD_KEYS[i]] || '');
+  }
+  return row;
+}
+
+function writeMentorHeaders_(sheet) {
+  var headerRange = sheet.getRange(1, 1, 1, MENTOR_HEADERS.length);
+  var existing = headerRange.getValues()[0];
+
+  if (existing[0] !== MENTOR_HEADERS[0] || existing.length < MENTOR_HEADERS.length) {
+    headerRange.setValues([MENTOR_HEADERS]);
+  }
+
+  headerRange
+    .setFontWeight('bold')
+    .setFontColor(HEADER_FG)
+    .setBackground(HEADER_BG)
+    .setHorizontalAlignment('center')
+    .setWrap(true);
+
+  sheet.setFrozenRows(1);
+  sheet.setRowHeight(1, 36);
+}
+
+function getOrCreateMentorSheet_(ss) {
+  ss = ss || getOrCreateSpreadsheet_();
+  var sheet = ss.getSheetByName(MENTOR_SHEET_NAME);
+  if (!sheet) {
+    sheet = ss.insertSheet(MENTOR_SHEET_NAME);
+  }
+  return sheet;
 }

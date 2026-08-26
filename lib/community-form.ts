@@ -334,5 +334,6 @@ export function communityFormToPayload(form: CommunityFormState) {
     hearAboutOther: form.hearAbout === 'Other' ? form.hearAboutOther.trim() : '',
     consent: form.consent ? 'Yes' : 'No',
     source: 'aamukh-capital-website',
+    formType: 'community',
   };
 }

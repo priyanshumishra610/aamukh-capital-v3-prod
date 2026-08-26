@@ -54,6 +54,11 @@ const FooterSection = () => {
             <p className="mb-4 font-sans text-[13px] font-medium text-white">Capital</p>
             <ul className="flex flex-col">
               <li>
+                <Link href="/mentor" className={linkClass}>
+                  Become a Mentor
+                </Link>
+              </li>
+              <li>
                 <Link href="/community" className={linkClass}>
                   Join the syndicate
                 </Link>

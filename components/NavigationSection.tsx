@@ -17,7 +17,7 @@ const NavigationSection = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === '/';
-  const isCommunity = pathname === '/community';
+  const isFormPage = pathname === '/community' || pathname === '/mentor';
   const sectionHref = (id: string) => (isHome ? `#${id}` : `/#${id}`);
 
   useEffect(() => {
@@ -66,10 +66,10 @@ const NavigationSection = () => {
 
           <div className="flex items-center gap-2 shrink-0">
             <a
-              href={isCommunity ? '/' : '/community'}
+              href={isFormPage ? '/' : '/mentor'}
               className="hidden md:flex items-center justify-center gap-2 px-5 py-2.5 h-10 bg-[#4C6BE8] text-white rounded-full text-sm font-sans font-semibold hover:bg-brand-600 transition-all active:scale-95 group"
             >
-              {isCommunity ? 'Back home' : 'Join the syndicate'}
+              {isFormPage ? 'Back home' : 'Become a Mentor'}
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
 
@@ -100,11 +100,11 @@ const NavigationSection = () => {
               </a>
             ))}
             <a
-              href={isCommunity ? '/' : '/community'}
+              href={isFormPage ? '/' : '/mentor'}
               onClick={() => setIsOpen(false)}
               className="flex items-center justify-center gap-2 w-full max-w-[240px] mt-4 px-8 py-5 bg-[#4C6BE8] text-white rounded-full text-lg font-sans font-bold"
             >
-              {isCommunity ? 'Back home' : 'Join the syndicate'}
+              {isFormPage ? 'Back home' : 'Become a Mentor'}
             </a>
             <a
               href="mailto:contact@aamukh.capital?subject=Company%20pitch"
