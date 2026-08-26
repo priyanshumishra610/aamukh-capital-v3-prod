@@ -262,10 +262,10 @@ const HeroSection = () => {
             </HeroCta>
 
             <a
-              href="mailto:contact@aamukh.capital?subject=Company%20pitch"
+              href="/mentor"
               className="glass-panel inline-flex min-h-12 items-center justify-center rounded-full px-8 py-4 font-sans text-[16px] font-semibold tracking-tight text-text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#4C6BE8]"
             >
-              Pitch a company
+              Become a Mentor
             </a>
           </div>
         </motion.div>

@@ -63,11 +63,6 @@ const FooterSection = () => {
                   Join the syndicate
                 </Link>
               </li>
-              <li>
-                <a href="mailto:contact@aamukh.capital?subject=Company%20pitch" className={linkClass}>
-                  Pitch a company
-                </a>
-              </li>
             </ul>
           </div>
 
